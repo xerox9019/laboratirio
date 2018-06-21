@@ -6,7 +6,16 @@ $this->title = 'Ingreso de los alumnos';
 <div class="site-index">
     <!-- Header -->
     <header>
+        
         <div align="center">
+            <h1>LABORATORIO DE REDES</h1>>
+            <img src="/imagen/JAGUAR.png">
+        </div>
+         
+    </header>
+    
+    <body> 
+            <div align="center">
             <br><br><br>
             <?= $this->render('_form', ['model' => $model]); ?>
             <?php
@@ -16,7 +25,7 @@ $this->title = 'Ingreso de los alumnos';
                 <div  style="color:black">
                     <?php echo "Matricula: " . $user->username;
                     echo "<br>"; ?>
-                    <?php echo "Nombre y Apellido: " . $user->nombre . ' ' . $user->paterno . ' ';
+                    <?php echo "Nombre y Apellido: " . $user->nombre . ' ' . $user->paterno . ' ' .$user->materno ;
                     echo "<br>"; ?>
                 </div>
     <?php echo "<br>"; ?>
@@ -27,7 +36,9 @@ $this->title = 'Ingreso de los alumnos';
     <?php
 }
 ?>
-    </header>
+    
+    
+    </body>
 
 
     <script type="text/javascript">
