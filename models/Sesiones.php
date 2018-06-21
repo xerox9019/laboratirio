@@ -40,6 +40,7 @@ class Sesiones extends \yii\db\ActiveRecord
             [['nu_docente', 'nu_materia', 'duracion'], 'integer'],
             [['fecha_inicio'], 'safe'],
             [['nombre'], 'string'],
+            [['fecha_inicio'], 'unique'],
             [['nu_materia'], 'exist', 'skipOnError' => true, 'targetClass' => Materias::className(), 'targetAttribute' => ['nu_materia' => 'id']],
             [['nu_docente'], 'exist', 'skipOnError' => true, 'targetClass' => Usuarios::className(), 'targetAttribute' => ['nu_docente' => 'id']],
         ];
@@ -51,12 +52,12 @@ class Sesiones extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'nu_docente' => 'Nu Docente',
-            'nu_materia' => 'Nu Materia',
-            'fecha_inicio' => 'Fecha Inicio',
-            'duracion' => 'Duracion',
-            'nombre' => 'Nombre',
+            'id' => Yii::t('app', 'ID'),
+            'nu_docente' => Yii::t('app', 'Nu Docente'),
+            'nu_materia' => Yii::t('app', 'Nu Materia'),
+            'fecha_inicio' => Yii::t('app', 'Fecha Inicio'),
+            'duracion' => Yii::t('app', 'Duracion'),
+            'nombre' => Yii::t('app', 'Nombre'),
         ];
     }
 

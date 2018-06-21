@@ -4,7 +4,7 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => 'pgsql:host=localhost;dbname=laboratorio',
     'username' => 'postgres',
-    'password' => 'fireleo123',
+    'password' => 'oscar123.',
     'charset' => 'utf8',
 
 

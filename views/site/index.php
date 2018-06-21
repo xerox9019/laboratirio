@@ -1,53 +1,46 @@
 <?php
-
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Ingreso de los alumnos';
 ?>
 <div class="site-index">
+    <!-- Header -->
+    <header>
+        <div align="center">
+            <br><br><br>
+            <?= $this->render('_form', ['model' => $model]); ?>
+            <?php
+            if ($user != null && $fecha != null) {
+                ?>
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+                <div  style="color:black">
+                    <?php echo "Matricula: " . $user->username;
+                    echo "<br>"; ?>
+                    <?php echo "Nombre y Apellido: " . $user->nombre . ' ' . $user->paterno . ' ';
+                    echo "<br>"; ?>
+                </div>
+    <?php echo "<br>"; ?>
+                <div class="alert alert-danger fade in">
+                <?= $fecha ?> 
+                </div>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+    <?php
+}
+?>
+    </header>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
 
-    <div class="body-content">
+    <script type="text/javascript">
+        <!--
+          function isNumberKey(evt)
+        {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+            return true;
+        }
+        //-->
+    </script>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
 </div>

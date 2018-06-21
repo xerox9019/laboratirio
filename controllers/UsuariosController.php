@@ -10,9 +10,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UsuarioController implements the CRUD actions for Usuarios model.
+ * UsuariosController implements the CRUD actions for Usuarios model.
  */
-class UsuarioController extends Controller
+class UsuariosController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -122,6 +122,6 @@ class UsuarioController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 }

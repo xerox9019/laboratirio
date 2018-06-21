@@ -8,7 +8,9 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
+use app\models\Bitacora;
 use app\models\ContactForm;
+use app\models\AlumnosForm;
 
 class SiteController extends Controller
 {
@@ -61,7 +63,21 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new AlumnosForm();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $user = \app\models\Usuarios::find()->filterWhere(['username' => $model->username])->one();
+            if($user !== null && empty($user->password)){
+                $bitacora = new Bitacora();
+                $bitacora->nu_alumno = $user->id;
+                // Determinar de acuerdo a la hora si hay sesiones programada o no
+//                $sesiones = \app\models\Sesiones::findAll([])
+                $bitacora->fecha = date("Y-m-d h:i:s A");
+                $bitacora->save();
+            }
+        }
+
+        return $this->render('index', ['model' => $model, 'user' => isset($user) ? $user: null, 
+            'fecha' => isset($bitacora) ? $bitacora->fecha: null]);
     }
 
     /**

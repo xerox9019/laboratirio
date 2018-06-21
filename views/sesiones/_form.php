@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'fecha_inicio')->textInput() ?>
 
-    <?= $form->field($model, 'duracion')->textInput() ?>
+    <?= $form->field($model, 'duracion')->dropDownList([1 => '1', 2 =>  '2']) ?>
 
     <?= $form->field($model, 'nombre')->textarea(['rows' => 6]) ?>
 
