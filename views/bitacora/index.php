@@ -10,6 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Bitacoras';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+date_default_timezone_set('America/Mexico_City');  
 <div class="bitacora-index">
 
     <h1><?= Html::encode($this->title) ?></h1>

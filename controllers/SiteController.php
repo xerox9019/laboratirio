@@ -17,6 +17,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
+
     public function behaviors()
     {
         return [
@@ -78,6 +79,9 @@ class SiteController extends Controller
 
         return $this->render('index', ['model' => $model, 'user' => isset($user) ? $user: null, 
             'fecha' => isset($bitacora) ? $bitacora->fecha: null]);
+        
+       
+            
     }
 
     /**

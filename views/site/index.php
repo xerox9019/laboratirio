@@ -8,7 +8,7 @@ $this->title = 'Ingreso de los alumnos';
     <header>
         
         <div align="center">
-            <h1>LABORATORIO DE REDES</h1>>
+            <h1>LABORATORIO DE REDES</h1>
             <img src="/imagen/JAGUAR.png">
         </div>
          

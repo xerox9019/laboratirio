@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Bitacora */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+  
 <div class="bitacora-form">
 
     <?php $form = ActiveForm::begin(); ?>
