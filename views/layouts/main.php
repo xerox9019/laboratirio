@@ -50,7 +50,7 @@ AppAsset::register($this);
                         ['label' => 'Bitacora', 'url' => ['/bitacora/index']],
                         ['label' => 'Inventario', 'url' => ['/inventario/index']],
                         ['label' => 'Sesiones', 'url' => ['/sesiones/index']],
-                        ['label' => 'Sesiones Productos', 'url' => ['/sesiones-productos/index']],
+                        ['label' => 'Sesiones Producto', 'url' => ['/sesiones-productos/index']],
                 ]
             ],
             Yii::$app->user->isGuest ? (
