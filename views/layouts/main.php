@@ -41,8 +41,18 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Catalogos',  'items' => [
+			['label' => 'Producto', 'url' => ['/productos/index']],
+                        ['label' => 'Grupo', 'url' => ['/grupos/index']],
+                        ['label' => 'Miembro de Grupos', 'url' => ['/grupos-miembros/index']],
 			['label' => 'Usuario', 'url' => ['/usuario/index']],
 			['label' => 'Materias', 'url' => ['/materias/index']],
+                        ['label' => 'Bitacora', 'url' => ['/bitacora/index']],
+                        ['label' => 'Inventario', 'url' => ['/inventario/index']],
+                        ['label' => 'Sesiones', 'url' => ['/sesiones/index']],
+                        ['label' => 'Sesiones Productos', 'url' => ['/sesiones-productos/index']],
+                ]
+            ],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
