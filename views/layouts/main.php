@@ -45,7 +45,7 @@ AppAsset::register($this);
 			['label' => 'Producto', 'url' => ['/productos/index']],
                         ['label' => 'Grupo', 'url' => ['/grupos/index']],
                         ['label' => 'Miembro de Grupos', 'url' => ['/grupos-miembros/index']],
-			['label' => 'Usuario', 'url' => ['/usuario/index']],
+			['label' => 'Usuarios', 'url' => ['/usuarios/index']],
 			['label' => 'Materias', 'url' => ['/materias/index']],
                         ['label' => 'Bitacora', 'url' => ['/bitacora/index']],
                         ['label' => 'Inventario', 'url' => ['/inventario/index']],

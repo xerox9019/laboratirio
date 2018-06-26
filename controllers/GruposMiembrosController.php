@@ -8,6 +8,7 @@ use app\models\GruposMiembrosSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * GruposMiembrosController implements the CRUD actions for GruposMiembros model.
@@ -20,10 +21,24 @@ class GruposMiembrosController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'error', 'create'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['logout', 'index', 'create'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'logout' => ['post'],
                 ],
             ],
         ];

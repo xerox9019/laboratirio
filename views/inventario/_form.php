@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Productos;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Inventario */
@@ -12,7 +14,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nu_producto')->textInput() ?>
+     <?= $form->field($model, 'nu_producto')->dropDownList (
+ ArrayHelper::map(Productos::find()->all (), 'id','nombre'),
+[
+'prompt' =>'Seleccionar producto',
+] ); ?>
 
     <?= $form->field($model, 'cantidad')->textInput() ?>
 

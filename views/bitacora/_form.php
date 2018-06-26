@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use dosamigos\datepicker\DatePicker;
+use app\models\Usuarios;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Bitacora */
@@ -12,11 +15,21 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nu_sesion')->textInput() ?>
+   <?= $form->field($model, 'nu_sesion')->dropDownList([1 => '1', 2 =>  '2']) ?>
 
-    <?= $form->field($model, 'nu_alumno')->textInput() ?>
+ <?= $form->field($model, 'nu_alumno')->dropDownList (
+ ArrayHelper::map(Usuarios::find()->all (), 'id','username'),
+[
+'prompt' =>'Seleccionar alumno',
+] ); ?>
 
-    <?= $form->field($model, 'fecha')->textInput() ?>
+      <?= $form->field($model, 'fecha')->widget (DatePicker::className(), [
+  'inline' =>false,
+    'clientOptions' => [
+        'autoclose' => true,
+        'format' => 'yyyy-mm-dd'
+    ]
+]);?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

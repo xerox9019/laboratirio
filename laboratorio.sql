@@ -70,7 +70,7 @@ drop table if exists sesiones cascade;
 create table sesiones
 (
 	id bigserial NOT NULL,
-	nu_docente bigint NOT NULL,
+	nu_docente bigint,
 	nu_materia bigint NOT NULL,
 	fecha_inicio timestamp,
 	duracion int,

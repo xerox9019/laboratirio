@@ -14,7 +14,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'nivel')->textInput() ?>
+	<?= $form->field($model, 'nivel')->textInput() ?>
+	 
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

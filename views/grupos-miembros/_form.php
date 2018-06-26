@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Grupos;
+use app\models\Usuarios;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\GruposMiembros */
@@ -12,9 +15,19 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nu_alumno')->textInput() ?>
 
-    <?= $form->field($model, 'nu_grupo')->textInput() ?>
+	<?= $form->field($model, 'nu_alumno')->dropDownList (
+ ArrayHelper::map(Usuarios::find()->all (), 'id','username'),
+[
+'prompt' =>'Seleccionar Alumno',
+] );?>
+
+
+	<?= $form->field($model, 'nu_grupo')->dropDownList (
+ ArrayHelper::map(Grupos::find()->all (), 'id','nombre'),
+[
+'prompt' =>'Seleccionar Grupo',
+] );?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
